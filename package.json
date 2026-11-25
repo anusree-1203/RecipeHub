@@ -4,9 +4,8 @@
   "description": "A desktop Food Recipe App built with HTML, CSS, and JavaScript.",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "build": "electron-builder --win nsis"
-  },
+  "start": "electron ."
+},
   "author": "",
   "license": "MIT",
   "devDependencies": {
