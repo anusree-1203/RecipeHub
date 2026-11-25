@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RecipeHub | Admin Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+
+    <main class="auth-container">
+
+        <section class="auth-box">
+
+            <div class="auth-logo">🍴 RecipeHub</div>
+
+            <h2>Admin Login</h2>
+
+            <p>Login to access the RecipeHub Admin Dashboard.</p>
+
+            <form id="adminLoginForm">
+
+                <input
+                    type="email"
+                    id="adminEmail"
+                    placeholder="Enter admin email"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="adminPassword"
+                    placeholder="Enter admin password"
+                    required
+                >
+
+                <button type="submit">Admin Login ✨</button>
+
+            </form>
+
+            <p id="adminLoginMessage" class="form-message"></p>
+
+            <p class="auth-switch">
+                Not an admin?
+                <a href="login.html">Back to User Login</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="admin.js"></script>
+
+</body>
+</html>

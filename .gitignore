@@ -1,0 +1,5 @@
+node_modules/
+.npm-cache/
+npm-install.log
+npm-install-error.log
+.env

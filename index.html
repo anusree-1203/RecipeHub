@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>RecipeHub | Food Recipe App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🍴 Recipe<span>Hub</span>
+        </div>
+
+        <div class="nav-links">
+
+            <span id="welcomeUser"></span>
+
+            <button class="nav-btn"
+                    onclick="openAddRecipe()">
+                ＋ Add Recipe
+            </button>
+
+            <button class="nav-btn"
+                    onclick="displayRecipes()">
+                🍳 All Recipes
+            </button>
+
+            <button class="nav-btn"
+                    onclick="showFavorites()">
+                ❤️ Favorites
+            </button>
+
+            <button class="nav-btn"
+                    onclick="logout()">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                ✨ Cook • Create • Share
+            </div>
+
+            <h1>
+                Discover Your
+                <span>Next Favorite</span>
+                Recipe
+            </h1>
+
+            <p>
+                Explore delicious recipes from around the world.
+                Search by ingredients, discover cuisines,
+                and save your favorite dishes.
+            </p>
+
+            <div class="search-box">
+
+                <span class="search-icon">
+                    🔍
+                </span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search recipes, ingredients..."
+                    onkeyup="displayRecipes()"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FILTERS -->
+
+    <section class="filter-section">
+
+        <div class="filter-group">
+
+            🍽️
+
+            <select
+                id="cuisineFilter"
+                onchange="displayRecipes()"
+            >
+
+                <option value="all">
+                    All Cuisines
+                </option>
+
+                <option value="Indian">
+                    🇮🇳 Indian
+                </option>
+
+                <option value="South Indian">
+                    🇮🇳 South Indian
+                </option>
+
+                <option value="Korean">
+                    🇰🇷 Korean
+                </option>
+
+                <option value="Japanese">
+                    🇯🇵 Japanese
+                </option>
+
+                <option value="Italian">
+                    🇮🇹 Italian
+                </option>
+
+                <option value="Mexican">
+                    🇲🇽 Mexican
+                </option>
+
+                <option value="Chinese">
+                    🇨🇳 Chinese
+                </option>
+
+                <option value="American">
+                    🇺🇸 American
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filter-group">
+
+            🥗
+
+            <select
+                id="dietFilter"
+                onchange="displayRecipes()"
+            >
+
+                <option value="all">
+                    All Diets
+                </option>
+
+                <option value="Vegetarian">
+                    🌱 Vegetarian
+                </option>
+
+                <option value="Vegan">
+                    🥬 Vegan
+                </option>
+
+                <option value="Non-Vegetarian">
+                    🍗 Non-Vegetarian
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <!-- RECIPE HEADING -->
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>
+                Popular Recipes 🍳
+            </h2>
+
+            <p>
+                Hand-picked recipes for your kitchen
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- RECIPE CARDS -->
+
+    <main>
+
+        <div
+            id="recipeContainer"
+            class="recipe-container">
+        </div>
+
+    </main>
+
+
+    <!-- RECIPE POPUP -->
+
+    <div
+        id="recipeModal"
+        class="modal">
+
+        <div class="modal-content">
+
+            <span
+                class="close"
+                onclick="closeModal()">
+                &times;
+            </span>
+
+            <!-- RECIPE DETAILS -->
+
+            <div id="modalContent">
+            </div>
+
+
+            <!-- COMMENTS SECTION -->
+
+            <div class="comments-section">
+
+                <h3>💬 Comments</h3>
+
+                <textarea
+                    id="commentInput"
+                    placeholder="Write a comment..."
+                    rows="4">
+                </textarea>
+
+                <button
+                    class="nav-btn"
+                    onclick="addComment()">
+                    Post Comment
+                </button>
+
+                <div id="commentsContainer">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            🍴 RecipeHub
+        </p>
+
+        <p>
+            Discover • Cook • Share ❤️
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 RecipeHub | SDC Review 1 Project
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

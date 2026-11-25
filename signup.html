@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>RecipeHub | Sign Up</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="auth-page">
+
+    <main class="auth-container">
+
+        <section class="auth-box">
+
+            <!-- LOGO -->
+            <div class="auth-logo">
+                🍴 RecipeHub
+            </div>
+
+
+            <!-- HEADING -->
+            <h2>
+                Create Your Account ✨
+            </h2>
+
+            <p>
+                Join RecipeHub and discover something delicious.
+            </p>
+
+
+            <!-- SIGNUP FORM -->
+            <form id="signupForm">
+
+                <!-- NAME -->
+                <input
+                    type="text"
+                    id="signupName"
+                    placeholder="Enter your name"
+                    minlength="6"
+                    maxlength="50"
+                    autocomplete="name"
+                    required
+                >
+
+
+                <!-- EMAIL -->
+                <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="Enter your Gmail address"
+                    pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
+                    title="Please enter a valid Gmail address ending with @gmail.com"
+                    autocomplete="email"
+                    required
+                >
+
+
+                <!-- PASSWORD -->
+                <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Create a password"
+                    minlength="6"
+                    autocomplete="new-password"
+                    required
+                >
+
+
+                <!-- BUTTON -->
+                <button type="submit">
+                    Create Account ✨
+                </button>
+
+            </form>
+
+
+            <!-- MESSAGE -->
+            <p
+                id="signupMessage"
+                class="form-message"
+                aria-live="polite">
+            </p>
+
+
+            <!-- LOGIN LINK -->
+            <p class="auth-switch">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```

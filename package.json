@@ -1,0 +1,35 @@
+{
+  "name": "recipehub-desktop",
+  "version": "1.0.0",
+  "description": "A desktop Food Recipe App built with HTML, CSS, and JavaScript.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win nsis"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.recipehub.desktop",
+    "productName": "RecipeHub",
+    "files": [
+      "**/*",
+      "!dist/**",
+      "!node_modules/**",
+      "!.vscode/**"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}

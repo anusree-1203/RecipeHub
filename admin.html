@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>RecipeHub | Admin Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+
+        /* =========================
+           RECIPEHUB PASTEL ADMIN
+        ========================= */
+
+        .admin-page {
+            background: #fff8f5;
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .admin-header {
+            background: linear-gradient(
+                135deg,
+                #ffd6c9,
+                #f8d9e8
+            );
+
+            color: #5f4b4b;
+
+            padding: 45px 30px;
+
+            border-radius: 0 0 35px 35px;
+
+            box-shadow:
+                0 8px 25px rgba(150, 110, 110, 0.12);
+        }
+
+
+        .admin-header-content {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        .admin-header h1 {
+            margin: 0;
+
+            font-size: 36px;
+
+            color: #594646;
+        }
+
+
+        .admin-header p {
+            margin-top: 10px;
+
+            font-size: 17px;
+
+            color: #765f5f;
+        }
+
+
+        .admin-badge {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 8px 16px;
+
+            background: rgba(255, 255, 255, 0.65);
+
+            color: #765f5f;
+
+            border-radius: 20px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           MAIN CONTENT
+        ========================= */
+
+        .admin-container {
+            max-width: 1200px;
+
+            margin: 35px auto;
+
+            padding: 0 25px;
+        }
+
+
+        /* =========================
+           STATISTICS
+        ========================= */
+
+        .admin-stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+
+            margin-bottom: 35px;
+        }
+
+
+        .stat-card {
+            background: #fffdfb;
+
+            padding: 25px;
+
+            border-radius: 22px;
+
+            border: 1px solid #f3dfd9;
+
+            box-shadow:
+                0 6px 20px
+                rgba(130, 100, 100, 0.08);
+
+            transition: 0.2s ease;
+        }
+
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+        }
+
+
+        .stat-icon {
+            font-size: 34px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .stat-card h3 {
+            margin: 0;
+
+            font-size: 15px;
+
+            color: #917b7b;
+        }
+
+
+        .stat-card p {
+            margin: 8px 0 0;
+
+            font-size: 29px;
+
+            font-weight: bold;
+
+            color: #655151;
+        }
+
+
+        /* Different pastel statistic cards */
+
+        .stat-card:nth-child(1) {
+            background: #fff0f3;
+        }
+
+
+        .stat-card:nth-child(2) {
+            background: #fff3e8;
+        }
+
+
+        .stat-card:nth-child(3) {
+            background: #f1edff;
+        }
+
+
+        /* =========================
+           SECTION TITLE
+        ========================= */
+
+        .section-title {
+            margin-bottom: 20px;
+        }
+
+
+        .section-title h2 {
+            margin-bottom: 5px;
+
+            color: #5f4b4b;
+        }
+
+
+        .section-title p {
+            color: #927e7e;
+        }
+
+
+        /* =========================
+           ADMIN ACTION CARDS
+        ========================= */
+
+        .admin-actions {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .admin-card {
+            background: #fffdfb;
+
+            border-radius: 24px;
+
+            padding: 30px;
+
+            border: 1px solid #f1dfdc;
+
+            box-shadow:
+                0 7px 22px
+                rgba(130, 100, 100, 0.08);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        .admin-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 12px 28px
+                rgba(130, 100, 100, 0.12);
+        }
+
+
+        .admin-card-icon {
+            font-size: 43px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .admin-card h3 {
+            margin: 0 0 10px;
+
+            font-size: 21px;
+
+            color: #5f4b4b;
+        }
+
+
+        .admin-card p {
+            color: #8b7777;
+
+            line-height: 1.6;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* Pastel action cards */
+
+        .admin-card:nth-child(1) {
+            background: #fff5f7;
+        }
+
+
+        .admin-card:nth-child(2) {
+            background: #fff7ed;
+        }
+
+
+        .admin-card:nth-child(3) {
+            background: #f5f1ff;
+        }
+
+
+        .admin-card:nth-child(4) {
+            background: #eef8f2;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .admin-card button {
+            border: none;
+
+            padding: 12px 20px;
+
+            border-radius: 14px;
+
+            background: #f3b8aa;
+
+            color: #5c4545;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+
+        .admin-card button:hover {
+            background: #eaa596;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           ADMIN CONTENT
+        ========================= */
+
+        #adminContent {
+            background: #fffdfb;
+
+            margin-top: 30px;
+
+            padding: 30px;
+
+            border-radius: 24px;
+
+            border: 1px solid #f1dfdc;
+
+            box-shadow:
+                0 7px 22px
+                rgba(130, 100, 100, 0.08);
+        }
+
+
+        #adminContent h2 {
+            margin-top: 0;
+
+            color: #5f4b4b;
+        }
+
+
+        #adminContent p {
+            color: #8b7777;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .admin-stats {
+                grid-template-columns: 1fr;
+            }
+
+
+            .admin-actions {
+                grid-template-columns: 1fr;
+            }
+
+
+            .admin-header h1 {
+                font-size: 28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="admin-page">
+
+
+    <!-- =========================
+         ADMIN ACCESS CHECK
+    ========================= -->
+
+    <script>
+
+        if (localStorage.getItem("isAdmin") !== "true") {
+
+            window.location.href = "admin-login.html";
+
+        }
+
+    </script>
+
+
+    <!-- =========================
+         ADMIN HEADER
+    ========================= -->
+
+    <header class="admin-header">
+
+        <div class="admin-header-content">
+
+            <h1>
+                🍳 RecipeHub Admin
+            </h1>
+
+
+            <p>
+                Welcome to your administration dashboard.
+                Manage users, recipes and application data.
+            </p>
+
+
+            <span class="admin-badge">
+                🔐 Administrator Panel
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================= -->
+
+    <main class="admin-container">
+
+
+        <!-- =========================
+             STATISTICS
+        ========================= -->
+
+        <section class="admin-stats">
+
+
+            <!-- Users -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👥
+                </div>
+
+                <h3>
+                    Users
+                </h3>
+
+                <p id="adminUserCount">
+                    —
+                </p>
+
+            </div>
+
+
+            <!-- Recipes -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🍽️
+                </div>
+
+                <h3>
+                    Recipes
+                </h3>
+
+                <p id="adminRecipeCount">
+                    —
+                </p>
+
+            </div>
+
+
+            <!-- Platform -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⭐
+                </div>
+
+                <h3>
+                    Platform
+                </h3>
+
+                <p>
+                    Active
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================
+             ADMINISTRATION
+        ========================= -->
+
+        <section>
+
+
+            <div class="section-title">
+
+                <h2>
+                    Administration
+                </h2>
+
+                <p>
+                    Choose an option to manage
+                    your RecipeHub application.
+                </p>
+
+            </div>
+
+
+            <div class="admin-actions">
+
+
+                <!-- =====================
+                     MANAGE USERS
+                ====================== -->
+
+                <div class="admin-card">
+
+                    <div class="admin-card-icon">
+                        👥
+                    </div>
+
+
+                    <h3>
+                        Manage Users
+                    </h3>
+
+
+                    <p>
+                        View registered users and
+                        remove accounts when necessary.
+                    </p>
+
+
+                    <button onclick="manageUsers()">
+
+                        Manage Users →
+
+                    </button>
+
+                </div>
+
+
+                <!-- =====================
+                     MANAGE RECIPES
+                ====================== -->
+
+                <div class="admin-card">
+
+                    <div class="admin-card-icon">
+                        🍽️
+                    </div>
+
+
+                    <h3>
+                        Manage Recipes
+                    </h3>
+
+
+                    <p>
+                        View RecipeHub recipes and
+                        manage recipes created by users.
+                    </p>
+
+
+                    <button onclick="manageRecipes()">
+
+                        Manage Recipes →
+
+                    </button>
+
+                </div>
+
+
+                <!-- =====================
+                     DASHBOARD
+                ====================== -->
+
+                <div class="admin-card">
+
+                    <div class="admin-card-icon">
+                        📊
+                    </div>
+
+
+                    <h3>
+                        Application Dashboard
+                    </h3>
+
+
+                    <p>
+                        View important information and
+                        statistics about RecipeHub.
+                    </p>
+
+
+                    <button onclick="showDashboard()">
+
+                        View Dashboard →
+
+                    </button>
+
+                </div>
+
+
+                <!-- =====================
+                     LOGOUT
+                ====================== -->
+
+                <div class="admin-card">
+
+                    <div class="admin-card-icon">
+                        🔐
+                    </div>
+
+
+                    <h3>
+                        Admin Logout
+                    </h3>
+
+
+                    <p>
+                        Securely leave the administration
+                        panel and return to Admin Login.
+                    </p>
+
+
+                    <button onclick="adminLogout()">
+
+                        Logout →
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DYNAMIC ADMIN CONTENT
+        ========================= -->
+
+        <section id="adminContent">
+
+            <h2>
+                👋 Welcome, Admin!
+            </h2>
+
+
+            <p>
+                Select an administration option
+                above to get started.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script src="script.js"></script>
+
+    <script src="admin.js"></script>
+
+
+    <!-- =========================
+         UPDATE STATISTICS
+    ========================= -->
+
+    <script>
+
+        function updateAdminStats() {
+
+            const users =
+                JSON.parse(
+                    localStorage.getItem("users")
+                ) || [];
+
+
+            let recipeCount = 0;
+
+
+            if (
+                typeof getAllAdminRecipes === "function"
+            ) {
+
+                recipeCount =
+                    getAllAdminRecipes().length;
+
+            }
+
+
+            document.getElementById(
+                "adminUserCount"
+            ).textContent = users.length;
+
+
+            document.getElementById(
+                "adminRecipeCount"
+            ).textContent = recipeCount;
+
+        }
+
+
+        updateAdminStats();
+
+    </script>
+
+
+</body>
+
+</html>
